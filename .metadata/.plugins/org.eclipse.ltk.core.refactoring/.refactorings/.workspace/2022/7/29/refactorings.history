@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 10 resources" deleteContents="false" description="Delete 10 resources" element1="/chap02" element10="/chap3_1" element2="/chap04" element3="/chap05" element4="/chap06" element5="/chap07" element6="/chap08" element7="/chap09" element8="/chap10" element9="/chap11" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="10" stamp="1657602990325"/>&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/test01" element2="/test05" element3="/test07" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1657603002294"/>
+</session>
