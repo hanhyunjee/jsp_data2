@@ -1,23 +1,6 @@
 
-7월 12, 2022 14:11:10.220 NEW SESSION
-7월 12, 2022 14:11:10.220 [13032:10464:0712/141110.219:ERROR:device_event_log_impl.cc(214)] [14:11:10.219] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 14:12:08.148 [13032:9620:0712/141208.148:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
-7월 12, 2022 14:17:11.46 [8880:10208:0712/141711.046:ERROR:device_event_log_impl.cc(214)] [14:17:11.045] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-
-7월 12, 2022 14:28:56.450 NEW SESSION
-7월 12, 2022 14:28:56.450 [6948:13276:0712/142856.449:ERROR:device_event_log_impl.cc(214)] [14:28:56.449] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 14:29:54.270 [6948:7348:0712/142954.270:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
-7월 12, 2022 14:33:45.553 [5624:5944:0712/143345.553:ERROR:device_event_log_impl.cc(214)] [14:33:45.553] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-
-7월 12, 2022 16:29:49.452 NEW SESSION
-7월 12, 2022 16:29:49.452 [964:7844:0712/162949.451:ERROR:device_event_log_impl.cc(214)] [16:29:49.451] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:30:47.322 [964:7556:0712/163047.322:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
-7월 12, 2022 16:33:38.434 [8756:11680:0712/163338.434:ERROR:device_event_log_impl.cc(214)] [16:33:38.434] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:35:35.420 [8772:8704:0712/163535.420:ERROR:device_event_log_impl.cc(214)] [16:35:35.420] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:36:33.280 [8772:9028:0712/163633.280:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
-7월 12, 2022 16:41:02.503 [11556:6496:0712/164102.503:ERROR:device_event_log_impl.cc(214)] [16:41:02.503] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:42:00.389 [11556:3592:0712/164200.389:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
-7월 12, 2022 16:45:33.476 [10432:2832:0712/164533.476:ERROR:device_event_log_impl.cc(214)] [16:45:33.476] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:46:47.945 [10728:11724:0712/164647.945:ERROR:device_event_log_impl.cc(214)] [16:46:47.945] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:49:11.641 [12664:8256:0712/164911.641:ERROR:device_event_log_impl.cc(214)] [16:49:11.641] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
-7월 12, 2022 16:50:09.472 [12664:12828:0712/165009.472:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+7월 13, 2022 24:17:10.866 NEW SESSION
+7월 13, 2022 24:17:10.866 [13696:12624:0713/001710.865:ERROR:device_event_log_impl.cc(214)] [00:17:10.865] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+7월 13, 2022 24:17:10.867 [13696:12624:0713/001710.865:ERROR:device_event_log_impl.cc(214)] [00:17:10.866] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+7월 13, 2022 24:24:46.861 [6992:3216:0713/002446.861:ERROR:device_event_log_impl.cc(214)] [00:24:46.861] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+7월 13, 2022 24:24:46.866 [6992:3216:0713/002446.861:ERROR:device_event_log_impl.cc(214)] [00:24:46.861] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
