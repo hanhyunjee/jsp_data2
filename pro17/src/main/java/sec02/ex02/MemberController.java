@@ -45,6 +45,7 @@ public class MemberController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		String action = request.getPathInfo();
 		System.out.println("action:" + action);
+		
 		if (action == null || action.equals("/listMembers.do")) {
 			List<MemberVO> membersList = memberDAO.listMembers();
 			request.setAttribute("membersList", membersList);

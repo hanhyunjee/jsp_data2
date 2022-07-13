@@ -107,10 +107,32 @@ public class MemberDAO {
 		try {
 			conn = dataFactory.getConnection();
 			String query = "update t_member set pwd=?, name=?, email=? where id=?";
+			System.out.println(query);
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, pwd);
+			pstmt.setString(2, name);
+			pstmt.setString(3, email);
+			pstmt.setString(4, id);
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 	
+	public void delMember(String id) {
+		try {
+			conn = dataFactory.getConnection();
+			String query = "delete from t_member where id=?";	// delete문을 이용해 전달된 ID의 회원정보 삭제
+			System.out.println(query);
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 }

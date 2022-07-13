@@ -58,6 +58,7 @@ public class MemberController extends HttpServlet {
 			MemberVO memberVO = new MemberVO(id, pwd, name, email);
 			memberDAO.addMember(memberVO);
 			nextPage = "/member/listMembers.do";
+			
 		} else if (action.equals("/memberForm.do")) {
 			nextPage = "/test02/memberForm.jsp";
 		} else {

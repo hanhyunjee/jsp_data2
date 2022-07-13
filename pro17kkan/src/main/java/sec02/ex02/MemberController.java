@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MemberController
  */
-@WebServlet("*.do")
+//@WebServlet("/member/*")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	MemberDAO memberDAO;
@@ -52,7 +52,23 @@ public class MemberController extends HttpServlet {
 			List membersList = memberDAO.listMembers();
 			request.setAttribute("membersList", membersList);
 			nextPage = "/test03/listMembers.jsp";
-		} else if (action.equals("/modMemberForm.do")) {
+			
+		} else if (action.equals("/addMember.do")) {
+			String id = request.getParameter("id");
+			String pwd = request.getParameter("pwd");
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");
+			MemberVO memberVO = new MemberVO(id, pwd, name, email);
+			memberDAO.addMember(memberVO);
+			
+			nextPage = "/member/listMembers.do";
+			
+		} else if (action.equals("/memberForm.do")) {
+			nextPage = "/test03/memberForm.jsp";
+			
+			
+			
+		}else if (action.equals("/modMemberForm.do")) {
 			String id = request.getParameter("id");
 			MemberVO memInfo = memberDAO.findMember(id);
 			request.setAttribute("memInfo", memInfo);			
@@ -62,7 +78,7 @@ public class MemberController extends HttpServlet {
 			String pwd = request.getParameter("pwd");
 			String name = request.getParameter("name");
 			String email = request.getParameter("email");
-			MemberVO memverVO = new MemberVO(id, pwd, name, email);
+			MemberVO memberVO = new MemberVO(id, pwd, name, email);
 			memberDAO.modMember(memberVO);
 			request.setAttribute("msg", "modified");
 			nextPage="/member/listMembers.do";
