@@ -31,5 +31,5 @@
               type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@127.0.0.1:1521:XE"
               username="bg" password="bg" maxTotal="20" maxIdle="10"
-              maxWaitMillis="-1"/> 
+              maxWaitMillis="-1"/>
 </Context>

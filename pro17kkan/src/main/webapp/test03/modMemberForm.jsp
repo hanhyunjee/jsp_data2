@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+<<<<<<< HEAD
     pageEncoding="UTF-8"
     isELIgnored = "false"
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+=======
+	import = "java.util.*,sec01.ex01.*"
+    pageEncoding="UTF-8"
+    isELIgnored = "false"
+%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+>>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 <c:set var = "contextPath" value="${pageContext.request.contextPath}"/>
 <%
 	request.setCharacterEncoding("UTF-8");

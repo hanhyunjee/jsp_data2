@@ -2,15 +2,22 @@
     pageEncoding="UTF-8"
     isELIgnored = "false"
 %>
+<<<<<<< HEAD
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+=======
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var = "contextPath" value="${pageContext.request.contextPath}"/>
+>>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <c:choose>
 	<c:when test='${msg=="addMember"}'>
 		<script>
@@ -34,6 +41,32 @@
 		</script>
 	</c:when>
 </c:choose>
+=======
+	<c:choose>
+		<c:when test='${msg=="addMember"}'>
+			<script>
+				window.onload = function() {
+					alert("회원을 등록했습니다.");
+				}
+			</script>
+		</c:when>
+		<c:when test='${msg=="modified"}'>
+			<script>
+				window.onload = function() {
+					alert("회원 정보를 수정했습니다");
+				}
+			</script>
+		</c:when>
+		<c:when test='${msg=="deleted"}'>
+			<script>
+				window.onload = function() {
+					alert("회원 정보를 삭제했습니다.");
+				}
+			</script>
+		</c:when>
+	</c:choose>
+
+>>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 <meta charset="UTF-8">
 <title>회원 정보 출력창</title>
 <style>

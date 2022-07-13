@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  * Servlet implementation class MemberController
@@ -20,9 +19,6 @@ public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	MemberDAO memberDAO;
 
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
 	public void init() throws ServletException {
 		memberDAO = new MemberDAO();	// MemberDAO 생성
 	}
@@ -52,7 +48,10 @@ public class MemberController extends HttpServlet {
 			List membersList = memberDAO.listMembers();
 			request.setAttribute("membersList", membersList);
 			nextPage = "/test03/listMembers.jsp";
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 		} else if (action.equals("/addMember.do")) {
 			String id = request.getParameter("id");
 			String pwd = request.getParameter("pwd");
@@ -60,6 +59,7 @@ public class MemberController extends HttpServlet {
 			String email = request.getParameter("email");
 			MemberVO memberVO = new MemberVO(id, pwd, name, email);
 			memberDAO.addMember(memberVO);
+<<<<<<< HEAD
 			
 			nextPage = "/member/listMembers.do";
 			
@@ -69,6 +69,13 @@ public class MemberController extends HttpServlet {
 			
 			
 		}else if (action.equals("/modMemberForm.do")) {
+=======
+			request.setAttribute("msg", "addMember");
+			nextPage = "/member/listMembers.do";
+		} else if (action.equals("/memberForm.do")) {
+			nextPage = "/test03/memberForm.jsp";
+		} else if (action.equals("/modMemberForm.do")) {
+>>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 			String id = request.getParameter("id");
 			MemberVO memInfo = memberDAO.findMember(id);
 			request.setAttribute("memInfo", memInfo);			
