@@ -1,4 +1,4 @@
-package sec03.brd02;
+package sec03.brd03;
 
 
 import java.sql.Connection;
@@ -84,10 +84,10 @@ public class BoardDAO {
 		return 0;
 	}
 	
-	public void insertNewArticle(ArticleVO article) {
+	public int insertNewArticle(ArticleVO article) {
+		int articleNO = getNewArticleNO();
 		try {
 			conn = dataFactory.getConnection();
-			int articleNO = getNewArticleNO();
 			int parentNO = article.getParentNO();
 			String title = article.getTitle();
 			String content = article.getContent();
@@ -109,5 +109,6 @@ public class BoardDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return articleNO;
 	}
 }

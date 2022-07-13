@@ -72,7 +72,7 @@
 			</c:when>
 		</c:choose>
 	</table>
-	<a class="cls1" href=#>
+	<a class="cls1" href="${contextPath}/board/articleForm.do"> <!-- 글쓰기를 클릭하면 글쓰기창인 articleForm.jsp가 나타남 -->
 		<p class="cls2">글쓰기</p>
 	</a>
 </body>

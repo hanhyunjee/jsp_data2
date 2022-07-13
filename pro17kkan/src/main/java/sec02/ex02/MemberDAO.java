@@ -134,9 +134,5 @@ public class MemberDAO {
 		}
 		
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
 	
 }

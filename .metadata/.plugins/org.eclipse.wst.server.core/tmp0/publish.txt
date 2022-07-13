@@ -1,7 +1,6 @@
 #Tomcat publish data
-<<<<<<< HEAD
-#Wed Jul 13 17:09:13 KST 2022
-=======
-#Wed Jul 13 00:24:42 KST 2022
->>>>>>> 5a19756a266cbafc290babf96cc1f00a9cf178af
+#Thu Jul 14 00:21:36 KST 2022
+=\=\=\=\=\=\=
 org.eclipse.jst.jee.server\:pro17kkan=C\:\\tomcat-9\\wtpwebapps\\pro17kkan
+>>>>>>>=5a19756a266cbafc290babf96cc1f00a9cf178af
+<<<<<<<=HEAD
