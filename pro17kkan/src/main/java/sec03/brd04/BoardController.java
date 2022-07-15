@@ -1,4 +1,4 @@
-package sec03.brd03;
+package sec03.brd04;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +21,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FileUtils;
+
 
 
 
@@ -62,13 +63,13 @@ public class BoardController extends HttpServlet {
 			if (action == null) {
 				articlesList = boardService.listArticles();
 				request.setAttribute("articlesList", articlesList);
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board03/listArticles.jsp";
 			} else if (action.equals("/listArticles.do")) {		// action값이 /listArticles.do이면 전체글 조회
 				articlesList = boardService.listArticles();		// 전체글 조회
 				request.setAttribute("articlesList", articlesList);	// 조회된 글 목록을 articlesList로 바인딩 한 후 listArticles.jsp로 포워딩
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board03/listArticles.jsp";
 			} else if (action.equals("/articleForm.do")) {	// action값 /articleForm.do로 요청시 글쓰기 창 나타남
-				nextPage = "/board02/articleForm.jsp";
+				nextPage = "/board03/articleForm.jsp";
 				
 			} else if (action.equals("/addArticle.do")) {	//  /addArticle.do로 요청 시 새 글 추가작업
 				int articleNO = 0;
@@ -97,6 +98,11 @@ public class BoardController extends HttpServlet {
 									+ "/board/listArticles.do';"+"</script>");
 				
 				return;
+			} else if (action.equals("/viewArticle.do")) {
+				String articleNO = request.getParameter("articleNO");
+				articleVO = boardService.viewArticle(Integer.parseInt(articleNO));
+				request.setAttribute("article", articleVO);	//articleNO에 대한 글 정보를 조회하고 actiocel속성을 바인딩
+				nextPage = "/board03/viewArticle.jsp";
 			}
 				
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

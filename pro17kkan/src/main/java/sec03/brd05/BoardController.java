@@ -1,4 +1,4 @@
-package sec03.brd03;
+package sec03.brd05;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +24,8 @@ import org.apache.commons.io.FileUtils;
 
 
 
-//@WebServlet("/board/*")
+
+@WebServlet("/board/*")
 public class BoardController extends HttpServlet {
 
 	private static String ARTICLE_IMAGE_REPO = "C:\\board\\article_image";
@@ -51,7 +52,7 @@ public class BoardController extends HttpServlet {
 		doHandle(request,response);
 	}
 	
-	public void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nextPage = "";
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -62,13 +63,13 @@ public class BoardController extends HttpServlet {
 			if (action == null) {
 				articlesList = boardService.listArticles();
 				request.setAttribute("articlesList", articlesList);
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board04/listArticles.jsp";
 			} else if (action.equals("/listArticles.do")) {		// action값이 /listArticles.do이면 전체글 조회
 				articlesList = boardService.listArticles();		// 전체글 조회
 				request.setAttribute("articlesList", articlesList);	// 조회된 글 목록을 articlesList로 바인딩 한 후 listArticles.jsp로 포워딩
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board04/listArticles.jsp";
 			} else if (action.equals("/articleForm.do")) {	// action값 /articleForm.do로 요청시 글쓰기 창 나타남
-				nextPage = "/board02/articleForm.jsp";
+				nextPage = "/board04/articleForm.jsp";
 				
 			} else if (action.equals("/addArticle.do")) {	//  /addArticle.do로 요청 시 새 글 추가작업
 				int articleNO = 0;
@@ -97,6 +98,40 @@ public class BoardController extends HttpServlet {
 									+ "/board/listArticles.do';"+"</script>");
 				
 				return;
+			} else if (action.equals("/viewArticle.do")) {
+				String articleNO = request.getParameter("articleNO");
+				articleVO = boardService.viewArticle(Integer.parseInt(articleNO));
+				request.setAttribute("article", articleVO);	//articleNO에 대한 글 정보를 조회하고 actiocel속성을 바인딩
+				nextPage = "/board04/viewArticle.jsp";
+				
+			} else if (action.equals("/modArticle.do")) {
+				Map<String, String> articleMap = upload(request, response);
+				int articleNO = Integer.parseInt(articleMap.get("articleNO"));
+				articleVO.setArticleNO(articleNO);
+				String title = articleMap.get("title");
+				String content = articleMap.get("content");
+				String imageFileName = articleMap.get("imageFileName");
+				articleVO.setParentNO(0);
+				articleVO.setId("hong");
+				articleVO.setTitle(title);
+				articleVO.setContent(content);
+				articleVO.setImageFileName(imageFileName);
+				boardService.modArticle(articleVO);
+				if (imageFileName != null && imageFileName.length() != 0) {
+					String originalFileName = articleMap.get("originalFileName");
+					File srcFile = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\"+ imageFileName);
+					File destDir = new File(ARTICLE_IMAGE_REPO + "\\"+articleNO);
+					destDir.mkdir();
+					FileUtils.moveFileToDirectory(srcFile, destDir, true);
+					File oldFile = new File(ARTICLE_IMAGE_REPO+"\\"+articleNO+"\\"+originalFileName);
+					oldFile.delete();
+				}
+				PrintWriter pw = response.getWriter();
+				pw.print("<script>"+" alert('글을 수정했습니다.');" + "' location.href=' "
+									+ request.getContextPath()
+									+ "/board/viewArticle.do?articleNO="
+									+ articleNO + " ';'" + "</script>");
+				return;				
 			}
 				
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
