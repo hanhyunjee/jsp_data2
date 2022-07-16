@@ -25,7 +25,7 @@ import org.apache.commons.io.FileUtils;
 
 
 
-@WebServlet("/board/*")
+//@WebServlet("/board/*")
 public class BoardController extends HttpServlet {
 
 	private static String ARTICLE_IMAGE_REPO = "C:\\board\\article_image";
@@ -136,7 +136,6 @@ public class BoardController extends HttpServlet {
 				
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -47,9 +47,24 @@
 		 
 	     form.appendChild(articleNOInput);
 	     document.body.appendChild(form);
-		 form.submit();
+	     form.submit();
 	 
 	 }
+	 
+	 function fn_reply_form(url, parentNO){
+		 var form = document.createElement("form");
+		 form.setAttribute("method", "post");
+		 form.setAttribute("action", url);
+	     var parentNOInput = document.createElement("input");
+	     parentNOInput.setAttribute("type","hidden");
+	     parentNOInput.setAttribute("name","parentNO");
+	     parentNOInput.setAttribute("value", parentNO);
+		 
+	     form.appendChild(parentNOInput);
+	     document.body.appendChild(form);
+		 form.submit();
+	 }
+	 
 	 function readURL(input) {
 	     if (input.files && input.files[0]) {
 	         var reader = new FileReader();
@@ -63,9 +78,9 @@
 </head>
 <body>
   <form name="frmArticle" method="post"  action="${contextPath}"  enctype="multipart/form-data">
-  <table  border="0"  align="center">
+  <table  border=0  align="center">
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+   <td width=150 align="center" bgcolor=#FF9933>
       글번호
    </td>
    <td >
@@ -74,7 +89,7 @@
    </td>
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       작성자 아이디
    </td>
    <td >
@@ -82,7 +97,7 @@
    </td>
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       제목 
    </td>
    <td>
@@ -90,7 +105,7 @@
    </td>   
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       내용
    </td>
    <td>
@@ -100,7 +115,7 @@
  
 <c:if test="${not empty article.imageFileName && article.imageFileName!='null' }">  
 <tr>
-   <td width="150" align="center" bgcolor="#FF9933" rowspan="2">
+    <td width="150" align="center" bgcolor="#FF9933"  rowspan="2">
       이미지
    </td>
    <td>
@@ -116,7 +131,7 @@
   </tr>
  </c:if>
   <tr>
-	   <td width=20% align=center bgcolor=#FF9933>
+	   <td width="150" align="center" bgcolor="#FF9933">
 	      등록일자
 	   </td>
 	   <td>
@@ -126,12 +141,12 @@
   <tr   id="tr_btn_modify"  >
 	   <td colspan="2"   align="center" >
 	       <input type=button value="수정반영하기"   onClick="fn_modify_article(frmArticle)"  >
-         <input type=button value="취소"  onClick="backToList(frmArticle)">
+           <input type=button value="취소"  onClick="backToList(frmArticle)">
 	   </td>   
   </tr>
     
   <tr  id="tr_btn"    >
-   <td colspan=2 align=center>
+   <td colspan="2" align="center">
 	    <input type=button value="수정하기" onClick="fn_enable(this.form)">
 	    <input type=button value="삭제하기" onClick="fn_remove_article('${contextPath}/board/removeArticle.do', ${article.articleNO})">
 	    <input type=button value="리스트로 돌아가기"  onClick="backToList(this.form)">

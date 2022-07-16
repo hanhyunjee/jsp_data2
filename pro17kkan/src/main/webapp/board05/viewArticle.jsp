@@ -47,9 +47,10 @@
 		 
 	     form.appendChild(articleNOInput);
 	     document.body.appendChild(form);
-		 form.submit();
+	     form.submit();
 	 
 	 }
+	 
 	 function readURL(input) {
 	     if (input.files && input.files[0]) {
 	         var reader = new FileReader();
@@ -63,7 +64,7 @@
 </head>
 <body>
   <form name="frmArticle" method="post"  action="${contextPath}"  enctype="multipart/form-data">
-  <table  border="0"  align="center">
+  <table  border="0" align="center" >
   <tr>
    <td width="150" align="center" bgcolor="#FF9933">
       글번호
@@ -74,7 +75,7 @@
    </td>
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       작성자 아이디
    </td>
    <td >
@@ -82,15 +83,15 @@
    </td>
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       제목 
    </td>
    <td>
-    <input type=text value="${article.title }"  name="title"  id="i_title" disabled />
+    <input type="text" value="${article.title }"  name="title"  id="i_title" disabled />
    </td>   
   </tr>
   <tr>
-   <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#FF9933">
       내용
    </td>
    <td>
@@ -100,7 +101,7 @@
  
 <c:if test="${not empty article.imageFileName && article.imageFileName!='null' }">  
 <tr>
-   <td width="150" align="center" bgcolor="#FF9933" rowspan="2">
+    <td width="150" align="center" bgcolor="#FF9933"  rowspan="2">
       이미지
    </td>
    <td>
@@ -116,7 +117,7 @@
   </tr>
  </c:if>
   <tr>
-	   <td width=20% align=center bgcolor=#FF9933>
+	    <td width="150" align="center" bgcolor="#FF9933">
 	      등록일자
 	   </td>
 	   <td>
@@ -126,7 +127,7 @@
   <tr   id="tr_btn_modify"  >
 	   <td colspan="2"   align="center" >
 	       <input type=button value="수정반영하기"   onClick="fn_modify_article(frmArticle)"  >
-         <input type=button value="취소"  onClick="backToList(frmArticle)">
+           <input type=button value="취소"  onClick="backToList(frmArticle)">
 	   </td>   
   </tr>
     
